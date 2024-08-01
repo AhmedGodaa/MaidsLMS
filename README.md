@@ -7,7 +7,7 @@ or by clicking the button below.
 
 Import the collection and environment variables from the `./postman/development.postman_environment.json`
 directory.
->  🔴 Note: Export Environment variables has changed the name of the base url from `{{BaseURL}}' to `{{{baseURL}}}` make sure change it before test. 
+>  🔴 Note: Export Environment variables has changed the name of the base url from `{{BaseURL}}` to `{{baseURL}}` make sure change it before test. 
 
 [![Run in Postman](https://run.pstmn.io/button.svg)](https://documenter.getpostman.com/view/27239903/2sA3kdActs)
 
