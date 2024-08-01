@@ -27,10 +27,8 @@ import java.util.stream.Collectors;
 
 @Service
 public class AuthTokenFilter extends OncePerRequestFilter {
-    @Autowired
-    private JwtUtils jwtUtils;
-    @Autowired
-    private UserRepository userRepository;
+    private final JwtUtils jwtUtils;
+    private final UserRepository userRepository;
     @Autowired
     private final HandlerExceptionResolver handlerExceptionResolver;
 
@@ -38,8 +36,10 @@ public class AuthTokenFilter extends OncePerRequestFilter {
     private static final Logger logger = LoggerFactory.getLogger(AuthTokenFilter.class);
 
 
-    public AuthTokenFilter(HandlerExceptionResolver handlerExceptionResolver) {
+    public AuthTokenFilter(HandlerExceptionResolver handlerExceptionResolver, JwtUtils jwtUtils, UserRepository userRepository) {
         this.handlerExceptionResolver = handlerExceptionResolver;
+        this.jwtUtils = jwtUtils;
+        this.userRepository = userRepository;
     }
 
     @Override
