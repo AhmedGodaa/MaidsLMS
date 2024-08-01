@@ -1,4 +1,4 @@
-package cc.maids.lms.controllers.common;
+package cc.maids.lms.controllers;
 
 import cc.maids.lms.model.dto.*;
 import cc.maids.lms.services.UserService;

@@ -21,14 +21,17 @@ import java.time.LocalDate;
 @RestController
 @RequestMapping("/api")
 public class BorrowingRecordController {
-    @Autowired
-    private BorrowingRecordService borrowingRecordService;
+    private final BorrowingRecordService borrowingRecordService;
 
     @Autowired
     private BookService bookService;
 
     @Autowired
     private PatronService patronService;
+
+    public BorrowingRecordController(BorrowingRecordService borrowingRecordService) {
+        this.borrowingRecordService = borrowingRecordService;
+    }
 
     @PostMapping("/borrow/{bookId}/patron/{patronId}")
     public ResponseEntity<BorrowingRecord> borrowBook(@PathVariable String bookId, @PathVariable String patronId) {
